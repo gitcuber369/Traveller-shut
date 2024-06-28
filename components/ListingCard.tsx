@@ -1,7 +1,8 @@
 import { useCountries } from "@/app/hooks/getCountries";
 import Image from "next/image";
 import Link from "next/link";
-import { FavouriteButton } from "./SubmitButton";
+import { DeleteFromFavorite, FavouriteButton } from "./SubmitButton";
+import { addToFavorite, deleteFromFavorite } from "@/app/action";
 
 interface iAppProps {
   imagePath: string;
@@ -12,6 +13,7 @@ interface iAppProps {
   isInFavouriteList?: boolean;
   favoriteId: string;
   homeId: string;
+  pathName: string;
 }
 
 export default function ListingCard({
@@ -23,6 +25,7 @@ export default function ListingCard({
   favoriteId,
   isInFavouriteList,
   homeId,
+  pathName,
 }: iAppProps) {
   const { getCountryByValue } = useCountries();
   const country = getCountryByValue(location);
@@ -39,14 +42,18 @@ export default function ListingCard({
           <div className="z-10 absolute top-2 right-2">
             {isInFavouriteList ? (
               <>
-                <form>
-                  <FavouriteButton />
+                <form action={deleteFromFavorite}>
+                  <input type="hidden" name="favoriteId" value={favoriteId} />
+                  <input type="hidden" name="userId" value={userId} />
+                  <input type="hidden" name="pathName" value={pathName} />
+                  <DeleteFromFavorite />
                 </form>
               </>
             ) : (
-              <form>
+              <form action={addToFavorite}>
                 <input type="hidden" name="homeId" value={homeId} />
                 <input type="hidden" name="userId" value={userId} />
+                <input type="hidden" name="pathName" value={pathName} />
                 <FavouriteButton />
               </form>
             )}

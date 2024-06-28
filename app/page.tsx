@@ -76,6 +76,7 @@ async function ShowItems({
               favoriteId={item.Favorite[0]?.id}
               isInFavouriteList={item.Favorite.length > 0 ? true : false}
               homeId={item.id}
+              pathName="/"
             />
           ))}
         </div>
