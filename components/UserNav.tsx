@@ -56,7 +56,7 @@ export async function UserNav() {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href="/favaourites" className="w-full">
+                <Link href="/favorite" className="w-full">
                   My Favourites
                 </Link>
               </DropdownMenuItem>
