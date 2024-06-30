@@ -3,5 +3,5 @@ export default function CategoryShowcase({
 }: {
   catagoryName: string;
 }) {
-  return <div className="flex items-center">CategoryShowcase</div>;
+  return <div className="flex items-center"></div>;
 }
