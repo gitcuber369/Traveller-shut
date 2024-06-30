@@ -1,7 +1,7 @@
 import { useCountries } from "@/app/hooks/getCountries";
 import prisma from "@/app/lib/db";
 import CategoryShowcase from "@/components/CategoryShowcase";
-import { Separator } from "@/components/ui/";
+import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 
 async function getData(homeid: string) {
