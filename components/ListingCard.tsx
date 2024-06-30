@@ -36,7 +36,7 @@ export default function ListingCard({
           src={`https://tpqrmlxhwswbczrtppti.supabase.co/storage/v1/object/public/images/${imagePath}`}
           alt="Image of the destination"
           fill
-          className="rounded-lg h-full w-full object-cover mb-3"
+          className="rounded-lg h-full object-cover mb-3"
         />
         {userId && (
           <div className="z-10 absolute top-2 right-2">
@@ -60,7 +60,7 @@ export default function ListingCard({
           </div>
         )}
       </div>
-      <Link href={`/home/${homeId}`} className="mt-2">
+      <Link href={"/"}>
         <h3 className="font-medium text-base">
           {country?.flag} {country?.label} / {country?.region}
         </h3>
