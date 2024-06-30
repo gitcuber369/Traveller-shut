@@ -41,7 +41,7 @@ export default async function HomeOverview({
   const country = getCountryByValue(data?.country as string);
 
   return (
-    <div className="w-[75%] mx-auto mt-10">
+    <div className="w-[75%] mx-auto mt-10 mb-12">
       <h1 className="font-medium text-2xl mb-5">{data?.title}</h1>
       <div className="relative h-[550px]">
         <Image
@@ -76,7 +76,13 @@ export default async function HomeOverview({
           </div>
           <Separator className="my-7" />
 
-          <CategoryShowcase catagoryName={data?.catagoryName as string} />
+          <CategoryShowcase categoryName={data?.catagoryName as string} />
+
+          <Separator className="my-7" />
+
+          <p className="text-muted-foreground">{data?.description}</p>
+
+          <Separator className="my-7" />
         </div>
       </div>
     </div>
