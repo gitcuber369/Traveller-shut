@@ -104,7 +104,6 @@ export default async function HomeOverview({
 
           <HomeMap locationValue={country?.value as string} />
         </div>
-
         <form action={createReservation}>
           <input type="hidden" name="homeId" value={params.id} />
           <input type="hidden" name="userId" value={user?.id} />
