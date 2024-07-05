@@ -11,8 +11,10 @@ import { Separator } from "@/components/ui/separator";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
+import { unstable_noStore as noStore } from "next/cache";
 
 async function getData(homeid: string) {
+  noStore();
   const data = await prisma.home.findUnique({
     where: {
       id: homeid,
@@ -102,7 +104,6 @@ export default async function HomeOverview({
 
           <HomeMap locationValue={country?.value as string} />
         </div>
-
         <form action={createReservation}>
           <input type="hidden" name="homeId" value={params.id} />
           <input type="hidden" name="userId" value={user?.id} />
