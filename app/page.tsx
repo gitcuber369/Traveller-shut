@@ -10,7 +10,13 @@ async function getData({
   searchParams,
 }: {
   userId: string | undefined;
-  searchParams?: { filter?: string };
+  searchParams?: {
+    filter?: string;
+    country?: string;
+    guests?: string;
+    room?: string;
+    bathrooom?: string;
+  };
 }) {
   const data = await prisma.home.findMany({
     where: {
@@ -18,6 +24,10 @@ async function getData({
       addedDescription: true,
       addedLocation: true,
       catagoryName: searchParams?.filter ?? undefined,
+      country: searchParams?.country ?? undefined,
+      guests: searchParams?.guests ?? undefined,
+      bedroom: searchParams?.room ?? undefined,
+      bathroom: searchParams?.bathrooom ?? undefined,
     },
     select: {
       photo: true,
@@ -54,7 +64,9 @@ export default Home;
 async function ShowItems({
   searchParams,
 }: {
-  searchParams?: { filter?: string };
+  searchParams?: {
+    filter?: string;
+  };
 }) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();

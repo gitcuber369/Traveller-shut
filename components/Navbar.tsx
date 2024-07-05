@@ -4,6 +4,7 @@ import React from "react";
 import Desktop from "../public/Desktop.png";
 import Mobile from "../public/Mobile.png";
 import { UserNav } from "./UserNav";
+import SearchFeature from "./SearchFeature";
 export default function Navbar() {
   return (
     <nav className="w-full border-b">
@@ -21,11 +22,11 @@ export default function Navbar() {
             className="block lg:hidden w-10"
           />
         </Link>
-        <div className="rounded-full border px-5 py-2">
-          <h1>The search bar</h1>
+        <div className="text-sm">
+          <SearchFeature />
         </div>
         <div>
-        <UserNav />
+          <UserNav />
         </div>
       </div>
     </nav>
