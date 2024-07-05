@@ -4,7 +4,7 @@ import React from "react";
 import { useFormStatus } from "react-dom";
 import { Button } from "./ui/button";
 import { Heart, Loader2 } from "lucide-react";
-export default function CreationButon() {
+export default function CreationButton() {
   const { pending } = useFormStatus();
   return (
     <>
